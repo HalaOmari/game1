@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+fileFormatVersion: 2
+guid: bae6fd5a4fd37bf4591fda5cff5ba474
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: bae6fd5a4fd37bf4591fda5cff5ba474
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> or_recovery_with_riddle_3

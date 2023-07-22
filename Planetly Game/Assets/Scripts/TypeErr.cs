@@ -1,0 +1,67 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class TypeErr : MonoBehaviour
+{
+    [SerializeField] protected int id;
+    protected bool active = true;
+
+    public static TypeErr current;
+    
+    private void Awake()
+    {
+        current = this;
+    }
+    public event Action onExitSolveArea;
+
+    //usually called after solving
+    protected void ExitSolveArea()
+    {
+        if (onExitSolveArea != null)
+        {
+            onExitSolveArea();
+        }
+    }
+    public event Action onSolve;
+
+    //usually called after solving
+    protected void Solve()
+    {
+        CharacterManager.current.onPressMusicKey -= TrySolve;
+        SetActive(false);
+        if (onSolve != null)
+        {
+            onSolve();
+        }
+    }
+    
+    public int GetId()
+    {
+        return id;
+    }
+
+    protected void SetId(int newId)
+    {
+        id = newId;
+    }
+
+    public bool IsActive()
+    {
+        return active;
+    }
+
+    public void SetActive(bool value)
+    {
+        active = value;
+    }
+    
+    public abstract void TrySolve(Music key);
+    //add to only refer to player
+    protected abstract void OnTriggerEnter(Collider other);
+    
+    //add to only refer to player
+    protected abstract void OnTriggerExit(Collider other);
+
+}
